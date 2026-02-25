@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: energy-analytics-api
+    env: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm run start -w @energy-dashboard/api
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CORS_ORIGIN
+        value: "*"
