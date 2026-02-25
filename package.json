@@ -1,0 +1,49 @@
+{
+  "name": "energy-analytics-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Industrial Energy Analytics Dashboard portfolio project with React + Express + PostgreSQL",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:web dev:api",
+    "dev:web": "npm run dev -w @energy-dashboard/web",
+    "dev:api": "npm run dev -w @energy-dashboard/api",
+    "build": "npm-run-all build:shared build:api build:web",
+    "build:web": "npm run build -w @energy-dashboard/web",
+    "build:api": "npm run build -w @energy-dashboard/api",
+    "build:shared": "npm run build -w @energy-dashboard/shared",
+    "lint": "npm-run-all lint:shared lint:api lint:web",
+    "lint:web": "npm run lint -w @energy-dashboard/web",
+    "lint:api": "npm run lint -w @energy-dashboard/api",
+    "lint:shared": "npm run lint -w @energy-dashboard/shared",
+    "typecheck": "npm-run-all typecheck:shared typecheck:api typecheck:web",
+    "typecheck:web": "npm run typecheck -w @energy-dashboard/web",
+    "typecheck:api": "npm run typecheck -w @energy-dashboard/api",
+    "typecheck:shared": "npm run typecheck -w @energy-dashboard/shared",
+    "test": "npm-run-all test:shared test:api test:web",
+    "test:web": "npm run test -w @energy-dashboard/web",
+    "test:api": "npm run test -w @energy-dashboard/api",
+    "test:shared": "npm run test -w @energy-dashboard/shared",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

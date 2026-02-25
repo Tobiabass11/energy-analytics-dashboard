@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+.env
+.env.*
+!.env.example
+coverage
+dist
+build
+.vscode
+.npmrc
+*.log
+apps/api/prisma/dev.db
+apps/api/prisma/dev.db-journal
+apps/api/src/data/generated/*.json
+apps/api/src/data/generated/*.csv
+!apps/api/src/data/generated/.gitkeep
