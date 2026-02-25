@@ -43,3 +43,7 @@ Optional for Postgres phase:
 - Verify CORS allows only expected domains
 - Confirm API health endpoint availability
 - Monitor logs for 4xx/5xx spikes
+- Update README Live Demo links with production URLs
+- Replace placeholder screenshot assets with real UI captures
+
+Use `docs/release-checklist.md` for the complete release runbook.
