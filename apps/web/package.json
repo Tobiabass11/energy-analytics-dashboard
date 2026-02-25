@@ -12,7 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@energy-dashboard/shared": "0.1.0",
+    "@energy-dashboard/shared": "file:../../packages/shared",
     "@tanstack/react-query": "^5.90.5",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
