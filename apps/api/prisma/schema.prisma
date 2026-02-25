@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProductionLine {
+  id            String           @id @default(cuid())
+  lineCode      String           @unique
+  displayName   String
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  sensorReadings SensorReading[]
+  faultEvents   FaultEvent[]
+  thresholds    ThresholdConfig?
+}
+
+model SensorReading {
+  id          String   @id @default(cuid())
+  lineId      String
+  timestamp   DateTime
+  throughput  Float
+  temperature Float
+  pressure    Float
+  energy      Float
+  anomalyJson Json?
+  createdAt   DateTime @default(now())
+
+  line ProductionLine @relation(fields: [lineId], references: [id], onDelete: Cascade)
+
+  @@index([lineId, timestamp])
+}
+
+model FaultEvent {
+  id               String   @id @default(cuid())
+  lineId           String
+  startedAt        DateTime
+  endedAt          DateTime?
+  faultType        String
+  category         String
+  severity         String
+  resolutionStatus String
+  durationMinutes  Int
+  createdAt        DateTime @default(now())
+
+  line ProductionLine @relation(fields: [lineId], references: [id], onDelete: Cascade)
+
+  @@index([lineId, startedAt])
+  @@index([category])
+}
+
+model ThresholdConfig {
+  id                      String  @id @default(cuid())
+  lineId                  String  @unique
+  throughputMin           Float
+  throughputMax           Float
+  throughputWarningBuffer Float
+  temperatureMin          Float
+  temperatureMax          Float
+  temperatureWarningBuffer Float
+  pressureMin             Float
+  pressureMax             Float
+  pressureWarningBuffer   Float
+  energyMin               Float
+  energyMax               Float
+  energyWarningBuffer     Float
+  updatedAt               DateTime @updatedAt
+
+  line ProductionLine @relation(fields: [lineId], references: [id], onDelete: Cascade)
+}
