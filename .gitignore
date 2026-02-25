@@ -14,3 +14,4 @@ apps/api/prisma/dev.db-journal
 apps/api/src/data/generated/*.json
 apps/api/src/data/generated/*.csv
 !apps/api/src/data/generated/.gitkeep
+.vercel
