@@ -2,6 +2,22 @@
 
 A portfolio-grade industrial operations dashboard built with React and Express to visualize production line telemetry from synthetic SCADA-like exports.
 
+## Live Demo
+
+- Frontend (Vercel): `TBD after deploy`
+- API (Render): `TBD after deploy`
+- API health check: `TBD after deploy` + `/api/health`
+
+After deploying, replace the values above with your production URLs.
+
+## Screenshots
+
+![Overview Dashboard](docs/screenshots/overview-dashboard.svg)
+![Line Diagnostics](docs/screenshots/line-diagnostics.svg)
+![Fault Log Filters](docs/screenshots/fault-log-filters.svg)
+![Threshold Configuration](docs/screenshots/threshold-configuration.svg)
+![Shift Report Export](docs/screenshots/shift-report-export.svg)
+
 ## Highlights
 
 - 20-line production overview with severity-first sorting (critical/warning first)
@@ -62,7 +78,10 @@ Timezone: `Africa/Lagos`
 - Frontend: Vercel
 - API + PostgreSQL: Render
 
-Detailed instructions: `docs/deployment.md`
+Detailed instructions:
+
+- `docs/deployment.md`
+- `docs/release-checklist.md`
 
 ## Data Note
 
