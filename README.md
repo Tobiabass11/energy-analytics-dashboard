@@ -12,11 +12,11 @@ After deploying, replace the values above with your production URLs.
 
 ## Screenshots
 
-![Overview Dashboard](docs/screenshots/overview-dashboard.svg)
-![Line Diagnostics](docs/screenshots/line-diagnostics.svg)
-![Fault Log Filters](docs/screenshots/fault-log-filters.svg)
-![Threshold Configuration](docs/screenshots/threshold-configuration.svg)
-![Shift Report Export](docs/screenshots/shift-report-export.svg)
+![Overview Dashboard](docs/screenshots/overview-dashboard.png)
+![Line Diagnostics](docs/screenshots/line-diagnostics.png)
+![Fault Log Filters](docs/screenshots/fault-log-filters.png)
+![Threshold Configuration](docs/screenshots/threshold-configuration.png)
+![Shift Report Export](docs/screenshots/shift-report-export.png)
 
 ## Highlights
 
